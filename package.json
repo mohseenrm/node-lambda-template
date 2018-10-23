@@ -1,0 +1,29 @@
+{
+  "name": "lambda-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "node src/server.local.js",
+    "lambda:deploy": "\"node_modules/.bin/claudia\" create --handler lambda.handler --deploy-proxy-api --region eu-central-1",
+    "lambda:proxy": "\"node_modules/.bin/claudia\" generate-serverless-express-proxy --express-module src/index",
+    "start": "node src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohseenrm/node-lambda-template.git"
+  },
+  "author": "Mohseen Mukaddam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohseenrm/node-lambda-template/issues"
+  },
+  "homepage": "https://github.com/mohseenrm/node-lambda-template#readme",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.5",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "claudia": "^5.1.2"
+  }
+}
